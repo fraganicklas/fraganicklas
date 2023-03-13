@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ask Nicklas</title>
+  </head>
+  <body>
+    <h1>Ask Nicklas</h1>
+    <form id="question-form">
+      <label for="question">What is your question?</label>
+      <input type="text" id="question" name="question">
+      <button type="submit">Ask Nicklas</button>
+    </form>
+    <div id="answer"></div>
+    <script>
+      const form = document.getElementById('question-form');
+      const answerDiv = document.getElementById('answer');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        answerDiv.innerText = "Yes, Nicklas says so!";
+      });
+    </script>
+  </body>
+</html>
