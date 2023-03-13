@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ask Nicklas</title>
+    <title>Ställ Nicklas en fråga</title>
   </head>
   <body>
-    <h1>Ask Nicklas</h1>
+    <h1>Ställ Nicklas en fråga</h1>
     <form id="question-form">
-      <label for="question">What is your question?</label>
+      <label for="question">Vad har du för fråga till Nicklas?</label>
       <input type="text" id="question" name="question">
-      <button type="submit">Ask Nicklas</button>
+      <button type="submit">Fråga Nicklas</button>
     </form>
     <div id="answer"></div>
     <script>
@@ -17,7 +17,7 @@
 
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-        answerDiv.innerText = "Yes, Nicklas says so!";
+        answerDiv.innerText = "Nicklas rullar sina tärningar.. det landar på "JA"!";
       });
     </script>
   </body>
