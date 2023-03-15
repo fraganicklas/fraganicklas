@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ställ Nicklas en fråga</title>
-  </head>
-  <body>
-    <h1>Ställ Nicklas en fråga</h1>
-    <form id="question-form">
-      <label for="question">Vad har du för fråga till Nicklas?</label>
-      <input type="text" id="question" name="question">
-      <button type="submit">Fråga Nicklas</button>
-    </form>
-    <div id="answer"></div>
-    <script>
-      const form = document.getElementById('question-form');
-      const answerDiv = document.getElementById('answer');
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        answerDiv.innerText = "Nicklas rullar sina tärningar.. det landar på JA!";
-      });
-    </script>
-  </body>
+<head>
+	<title>Fråga Nicklas</title>
+	<style>
+		#dice {
+			width: 100px;
+			height: 100px;
+			background-color: white;
+			border: 1px solid black;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			font-size: 2em;
+			font-weight: bold;
+			text-align: center;
+			line-height: 1em;
+			letter-spacing: -0.05em;
+		}
+		.die {
+			flex-basis: 33.33%;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="rollDice()">fråga Nicklas</button>
+	<div id="dice"></div>
+	<script>
+		function rollDice() {
+			var dice = document.getElementById("dice");
+			var faces = ["Yes", "Yes", "Yes", "Yes", "Yes", "Yes"];
+			dice.innerHTML = "";
+			for (var i = 0; i < 6; i++) {
+				var die = document.createElement("div");
+				die.classList.add("die");
+				die.textContent = faces[i];
+				dice.appendChild(die);
+			}
+			var roll = Math.floor(Math.random() * 6) + 1;
+			dice.style.transform = "rotateX(" + (720 + (roll * 60)) + "deg) rotateY(" + (720 + (roll * 60)) + "deg)";
+		}
+	</script>
+</body>
 </html>
